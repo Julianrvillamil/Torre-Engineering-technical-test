@@ -38,7 +38,8 @@ function App() {
   };
 
   return (
-    <>
+    <div className="app-container">
+      <FavoriteSideBar favorites={favorites} />
       <div className="search-bar-container">
         <SearchBar updateResults={updateResults} />
         <SearchResults
@@ -46,8 +47,7 @@ function App() {
           updateFavorites={updateFavorites}
         />
       </div>
-      <FavoriteSideBar favorites={favorites} />
-    </>
+    </div>
   );
 }
 

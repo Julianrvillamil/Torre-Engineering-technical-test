@@ -1,10 +1,13 @@
 import { HiViewList } from "react-icons/hi";
+import "../styles/FavoriteSideBar.css";
 
 function FavoriteSideBar({ favorites }) {
   return (
     <div className="favorite-sidebar">
-      <HiViewList />
-      <h2>Favoritos</h2>
+      <div className="favorite-header">
+        <HiViewList />
+        <h2>Favoritos</h2>
+      </div>
       <ul>
         {favorites.map((favorite) => (
           <li key={favorite.ggId}>
@@ -16,7 +19,12 @@ function FavoriteSideBar({ favorites }) {
                 height="50"
               />
             </div>
-            <div>{favorite.name}</div>
+            <div className="search-results-text">
+              <div>{favorite.name}</div>
+              <div className="search-pfhead">
+                {favorite.professionalHeadline}
+              </div>
+            </div>
           </li>
         ))}
       </ul>

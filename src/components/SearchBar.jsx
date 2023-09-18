@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { MdPersonSearch } from "react-icons/md";
+import "../styles/SearchBar.css";
 
 function SearchBar({ updateResults }) {
   const [input, setInput] = useState("");
@@ -42,13 +43,16 @@ function SearchBar({ updateResults }) {
   }, [input]);
 
   return (
-    <div>
-      <MdPersonSearch id="person-search-icon" />
-      <input
-        placeholder="Busca personas por nombre"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
+    <div className="search-bar">
+      <div className="search-bar-inner">
+        <MdPersonSearch id="person-search-icon" />
+        <input
+          className="person-search-input"
+          placeholder="Busca personas por nombre"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </div>
     </div>
   );
 }

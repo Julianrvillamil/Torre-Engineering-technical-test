@@ -1,0 +1,46 @@
+/* Estilos para el contenedor de la barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  background-color: #1b1b1b;
+  border: 2px solid #a6a6a6;
+  border-radius: 25px;
+  padding: 10px;
+  transition: border-color 0.3s;
+}
+
+.search-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilos para el icono */
+#person-search-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.person-search-input {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+/* Estilos para el campo de entrada */
+input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  width: 100%;
+  line-height: normal;
+}
+
+/* Cambia el color del icono al buscar */
+.search-bar:focus-within #person-search-icon {
+  color: #cddc39;
+}
+
+/* Cambia el borde al buscar */
+.search-bar:focus-within {
+  border-color: #cddc39;
+}
