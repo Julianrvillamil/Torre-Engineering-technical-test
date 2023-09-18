@@ -3,7 +3,6 @@ import { MdPersonSearch } from "react-icons/md";
 
 function SearchBar({ updateResults }) {
   const [input, setInput] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,9 +25,7 @@ function SearchBar({ updateResults }) {
 
         if (response.ok) {
           const data = await response.json();
-          //   const results = data.results; // Acceder a los resultados dentro de data
-          updateResults(data.results); // Llama a la función para actualizar los resultados
-          //   setSearchResults(results);
+          updateResults(data.results);
         } else {
           console.error("Error al obtener los datos");
         }
@@ -40,8 +37,7 @@ function SearchBar({ updateResults }) {
     if (input.trim() !== "") {
       fetchData();
     } else {
-      //   setSearchResults([]);
-      updateResults([]); // Si el input está vacío, actualiza los resultados a un arreglo vacío
+      updateResults([]);
     }
   }, [input]);
 
@@ -53,22 +49,6 @@ function SearchBar({ updateResults }) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-
-      {/* <ul>
-        {searchResults.map((result) => (
-          <li key={result.ggId}>
-            <div>
-              <img
-                src={result.imageUrl}
-                alt={result.name}
-                width="50"
-                height="50"
-              />
-            </div>
-            <div>{result.name}</div>
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 }
